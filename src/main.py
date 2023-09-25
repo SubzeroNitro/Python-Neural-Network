@@ -1,6 +1,6 @@
-from neuralnetwork import NeuralNetwork
-from neuralnetwork import ActivationFunction
-from neuralnetwork import ErrorFunction
+from neural_network import NeuralNetwork
+from activation_functions import ActivationFunction
+from error_functions import ErrorFunction
 
 from keras.datasets import mnist
 from keras.utils import to_categorical

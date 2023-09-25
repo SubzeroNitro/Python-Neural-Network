@@ -4,7 +4,12 @@ from .error_functions import *
 from .utilities import *
 import numpy as np
 
+# 'NeuralNetwork' class represents a simple feed forward neural network 
 class NeuralNetwork:
+    # Initializes the neural network with the specified shape
+    # representing the number of layers and nodes per layer
+    # an activation function and error function can be passed
+    # to change which functions the neural network uses
     def __init__(self, shape: list, activation_function: ActivationFunction = ActivationFunction.SIGMOID, error_function: ErrorFunction = ErrorFunction.MEAN_SQUARED_ERROR):
         # Assert that the neural network has at least
         # two layers, at least one input and output,
