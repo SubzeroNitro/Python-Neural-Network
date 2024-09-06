@@ -5,7 +5,7 @@ import numpy as np
 def glorot_initialization_limit(num_inputs: int) -> float:
     return 1.0 / np.sqrt(num_inputs)
 
-def random_weight(shape: list) -> list:
+def random_weights(shape: list) -> list:
     # Calculate a limit and then apply a random uniform
     # distribution within the limits according to the
     # size of the shape
