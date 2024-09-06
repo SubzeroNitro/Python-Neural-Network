@@ -45,8 +45,8 @@ class NeuralNetwork:
         # Set random weight values along all layers
         for i in range(len(shape) - 1):
             # Compute a vector of randomized weights
-            layer_weight = random_weight((shape[i], shape[i + 1]))
-            self.weights.append(layer_weight)
+            layer_weights = random_weights((shape[i], shape[i + 1]))
+            self.weights.append(layer_weights)
             
             # Biases are initially zero
             layer_biases = np.zeros((1, shape[i + 1]))
@@ -110,8 +110,8 @@ class NeuralNetwork:
                 error = self.__error_function_derivative(computed_output, outputs[j])
 
                 # Loop backwards because this method of training
-                # is known as backwards propogation where we begin
-                # at the end and propogate corrections backwards
+                # is known as backwards propagation where we begin
+                # at the end and propagate corrections backwards
                 for k in reversed(range(len(self.weights))):
                     # By calculating the derivative of the outputs
                     # with respect to the weight of the previous layer
@@ -130,11 +130,11 @@ class NeuralNetwork:
                     # error itself
                     self.biases[k] -= error * learning_rate
                     
-                    # The error is 'propogated' to the next layer here
+                    # The error is 'propagated' to the next layer here
                     # for additional calculations to be performed
                     error = updated_error
             
-            # Statistical information on the error over ever epoch
+            # Statistical information on the error over every epoch
             print("Epoch " + str(i) + "/" + str(epochs) + "\t\tError: " + str(display_error / num_training_data))
     
     # Save the weights and biases to a file
